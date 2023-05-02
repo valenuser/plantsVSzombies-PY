@@ -35,7 +35,7 @@ class Zombie:
 
 
 #plantas
-LanLanzaguisantes = Planta('LanLanzaguisantes',150,15,25)
+LanLanzaguisantes = Planta('Lanzaguisantes',150,15,25)
 Explotonuez = Planta('Explotonuez',1,100,75)
 Girasol = Planta('Girasol',100,0,5)
 Repetidora = Planta('Repetidora',150,30,100)
