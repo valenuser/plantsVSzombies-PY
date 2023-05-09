@@ -1,55 +1,50 @@
 import random
 
-class Planta:
-    def __init__(self,nombre,vida,daño,coste):
-        self.nombre = nombre
-        self.vida = vida
-        self.daño = daño
-        self.coste = coste
 
+class Personaje:
+    nombre = ''
+    vida = 0
+    daño = 0
 
-
-    def golpear(self,enemigo):
-        ataque = self.daño + random.randrange(-10,11)
-        enemigo.vida = enemigo.vida - ataque
-        print(enemigo.nombre)
-        print('Vida del enemigo:',enemigo.vida)
-
-    
-    def explotar(self,enemigo):
-        enemigo.vida = enemigo.vida - enemigo.vida
-
-
-
-class Zombie:
     def __init__(self,nombre,vida,daño):
         self.nombre = nombre
         self.vida = vida
         self.daño = daño
 
+    def golpearZombie(self,enemigo):
+        ataque = self.daño + random.randrange(-10,11)
+        enemigo.vida = enemigo.vida - ataque
+        print(enemigo.nombre)
+        print('ATACA',self.nombre)
+        print('Vida del enemigo:',enemigo.vida)
 
-    def golpear(self,enemigo):
+    def explotarZombie(self,enemigo):
+        enemigo.vida = enemigo.vida - enemigo.vida
+
+    
+    def golpearPlanta(self,enemigo):
         ataque = self.daño + 2*random.randrange(-10,11)
         enemigo.vida - ataque
 
 
 
+
 #plantas
-LanLanzaguisantes = Planta('LanLanzaguisantes',150,15,25)
-Explotonuez = Planta('Explotonuez',1,100,75)
-Girasol = Planta('Girasol',100,0,5)
-Repetidora = Planta('Repetidora',150,30,100)
-Guisantralladora = Planta('Guisantralladora',100,40,200)
-Birasol = Planta('Birasol',150,0,250)
-Tripitadora = Planta('Tripitadora',150,50,300)
+LanLanzaguisantes = Personaje('Lanzaguisantes',150,15)
+Explotonuez = Personaje('Explotonuez',1,100)
+Girasol = Personaje('Girasol',100,0)
+Repetidora = Personaje('Repetidora',150,30)
+Guisantralladora = Personaje('Guisantralladora',100,40)
+Birasol = Personaje('Birasol',150,0)
+Tripitadora = Personaje('Tripitadora',150,50)
 
 #zombies
 
-zombieNormal = Zombie('zombieNormal',100,15)
-zombieEscudo = Zombie('zombieEscudo',150,15)
-zombieRockero = Zombie('zombieRockero',100,25)
-zombieRugbier = Zombie('zombieRugbier',100,40)
-zombieDeportista = Zombie('zombieDeportista',100,20)
+zombieNormal = Personaje('zombieNormal',100,15)
+zombieEscudo = Personaje('zombieEscudo',150,15)
+zombieRockero = Personaje('zombieRockero',100,25)
+zombieRugbier = Personaje('zombieRugbier',100,40)
+zombieDeportista = Personaje('zombieDeportista',100,20)
 
 plantas = {
     'Lanzaguisantes' : LanLanzaguisantes ,
