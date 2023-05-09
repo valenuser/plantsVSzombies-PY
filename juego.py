@@ -14,7 +14,7 @@ import random
 ronda = 1
 
 
-print('-'*87+'PLANTS VS ZOMBIES'+'-'*87)
+print('-'*83+'PLANTS VS ZOMBIES'+'-'*86)
 
 contPersonajes = random.randint(0,4)
 
@@ -31,9 +31,15 @@ for i in fichas.tablero:
 
 
 while True:
-    print('RONDA',ronda)
-    for i in fichas.tablero:
-        print(i)
+        print('\n','\t'*11,'RONDA',ronda,'\n')
+        for i in fichas.tablero:
+                print(i)
 
+        print('\n'*2)
+        contador = 0
+        for i in range(len(fichas.tablero)):
+                nombrePlanta = fichas.tablero[i][0]
+                nombreZombie = fichas.tablero[i][-1]
+                fichas.clases.plantas[nombrePlanta].golpearZombie(fichas.clases.zombies[nombreZombie])
 
-    break
+        break
