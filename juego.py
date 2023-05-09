@@ -2,14 +2,9 @@ import fichas
 import random
 
 
+#def finJuego(tablero):
 
-# def finJuego(tablero,verificacion = False,count = 0):
-#     if count == len(tablero):
-#           return False
-#     elif verificacion == True:
-#           return True
-#     else:
-#           if tablero[i][0] == '' 
+
 
 ronda = 1
 
@@ -40,6 +35,16 @@ while True:
         for i in range(len(fichas.tablero)):
                 nombrePlanta = fichas.tablero[i][0]
                 nombreZombie = fichas.tablero[i][-1]
-                fichas.clases.plantas[nombrePlanta].golpearZombie(fichas.clases.zombies[nombreZombie])
 
+                if nombrePlanta == 'Explotonuez':
+                        fichas.clases.plantas[nombrePlanta].explotarZombie(fichas.clases.zombies[nombreZombie])
+                elif nombrePlanta == 'Girasol' or nombrePlanta == 'Birasol':
+                        for i in range(len(fichas.tablero)):
+                                if fichas.tablero[i][0] != 'Girasol' and fichas.tablero[i][0] != 'Birasol':
+                                        fichas.clases.plantas[fichas.tablero[i][0]].mejoraDaño()
+                else:
+                        fichas.clases.plantas[nombrePlanta].golpearZombie(fichas.clases.zombies[nombreZombie])
+
+
+        
         break

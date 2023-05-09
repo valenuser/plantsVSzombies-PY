@@ -19,7 +19,13 @@ class Personaje:
         print('Vida del enemigo:',enemigo.vida)
 
     def explotarZombie(self,enemigo):
-        enemigo.vida = enemigo.vida - enemigo.vida
+        enemigo.vida = 0
+        print('ATACA',self.nombre)
+        print('Vida del enemigo:',enemigo.vida)
+
+    def mejoraDaño(self):
+        self.daño+=15
+        print('Daño de',self.nombre,':',self.daño)
 
     
     def golpearPlanta(self,enemigo):
